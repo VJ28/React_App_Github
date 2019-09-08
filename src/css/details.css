@@ -1,0 +1,38 @@
+.main-container{
+  display: flex;
+  min-width: 320px;
+  margin: 10px auto;
+  height: 150px;
+  padding-top: 10px;
+  padding-left: 20px;
+  border: 1px solid black;
+  background-color: ghostwhite;
+}
+
+.details-container{
+	padding-top: 10px;
+	padding-left: 20px;
+}
+.repo-name{
+	font-weight: 700;
+	font-size: 20px;
+	text-align: left;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}
+
+.owner-name, .fork-count, .star-count{
+	font-size: 15px;
+	text-align: left;
+	margin-bottom: 4px;
+}
+
+.img-container{
+  width: 125px;
+  height: 100%;
+}
+
+.img-container img{
+	width: 100%;
+	border-radius: 50%;
+}
