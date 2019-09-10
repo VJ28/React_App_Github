@@ -12,7 +12,7 @@ class SearchContainer extends Component{
 		return (
 			<div className="filter-main-container">
 				<input type="text" id="search-filter" className="input_box" placeholder="Search Repositories"/>
-				<button id="search-btn" className="btn  inline_block" onClick={this.handleSearch.bind(this)}>Search</button>
+				<button id="search-btn" className="btn sinline_block" onClick={this.handleSearch.bind(this)}>Search</button>
 		     </div>
 			);
 	}

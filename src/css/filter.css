@@ -9,3 +9,9 @@ select{
 	margin-right: 15px;
 	margin-bottom: 15px;
 }
+
+@media sreen and (max-width: 500px){
+	.lang-filter, .sort-filter{
+		display: block;
+	}
+}

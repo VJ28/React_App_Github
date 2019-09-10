@@ -41,7 +41,7 @@ class App extends React.Component {
 
 	searchResults(query){
 		if(query !== "")
-			this.setState({...this.state, searchQuery: query+"+"});
+			this.setState({...this.state, searchQuery: query+"+", page: 1});
 	}
 
 	changePagination(selectedPage){
@@ -52,9 +52,16 @@ class App extends React.Component {
 
 	handleFilters(type, selection){
 		if(type==="lang")
-			this.setState({...this.state, language: selection});
+			this.setState({...this.state, language: selection, page: 1});
 		else
-			this.setState({...this.state, sort: selection});
+			this.setState({...this.state, sort: selection, page: 1});
+	}
+
+	resetFilter(){
+		document.getElementById("search-filter").value = "";
+		document.getElementById("lang-selector").value = "javascript";
+		document.getElementById("sort-selector").value = "desc";
+		this.setState({...this.state, sort: "desc", page: 1, language: "javascript", searchQuery: ""});
 	}
 
 	componentDidUpdate(oldProps, newProps) {
@@ -87,7 +94,7 @@ class App extends React.Component {
 		return (
 		    <div className="App">
 		      	<SearchContainer handleClick={this.searchResults.bind(this)}/>
-		      	<FiltersContainer handleChange={this.handleFilters.bind(this)}/>
+		      	<FiltersContainer resetFilter={this.resetFilter.bind(this)} handleChange={this.handleFilters.bind(this)}/>
 		 		{this.renderRepoList()}
 		 		{this.state.results.length > 0 ?
 		 		<Pagination currentPage={this.state.page} handleClick={this.changePagination.bind(this)}/> : ""}
